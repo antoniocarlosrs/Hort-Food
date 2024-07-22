@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --rad:#d63a25;
+    --white: #ffffff;
+    --dark: #1e1c2a;
+    --surplus: #cccccc;
+    --hover:#b8b3b3;
+    --bc: #f3e8c8;
+    --navmenu: #f5f4f0fa;
+    --cor: #f5f4ee;
+}
+
+body {
+    color:var(--dark);
+    background: var(--cor);
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 2.5rem;
+    box-shadow: 0 0.1rem 0.5rem var(--surplus);
+    width: 100%;
+    background: var(--bc);
+    transition: all 0.5s;
+    position: fixed;
+}
+
+.navigation .logo {
+    color: var(--rad);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.logo span {
+    color: var(--dark);
+}
+
+.navigation .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+    cursor: pointer;
+}
+
+.navigation .nav-menu li {
+    color: var(--dark);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.navigation .nav-menu li:hover {
+    color: var(--rad);
+}
+
+.navigation i {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu {
+    cursor: pointer;
+    display: none;
+}
+
+.menu .bar {
+    display: block;
+    width: 1.7rem;
+    height: .2rem;
+    border-radius: .2rem;
+    background: var(--dark);
+    margin: .3rem auto;
+    transition: all 0.3s;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.home-text{
+    max-width: 37rem;
+}
+
+.home-text .text-1 {
+    font-size: 1.5rem;
+    color: var(--rad);
+    margin: 1rem 0;
+}
+
+.home-text .text-2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+
+.home p {
+    margin-bottom: 4rem;
+}
+
+.btn {
+    padding: 1rem 2.8rem;
+    background: var(--surplus);
+    color: var(--dark);
+    font-weight: 500;
+    border-radius: .3rem;
+    transition: all 0.5s;
+}
+
+.home .btn:hover {
+    background: var(--bc);
+    font-weight: 700;
+    border: solid 1px var(--surplus);
+}
+
+.home-image img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/* Responsividade */
+@media (max-width:884px) {
+    
+    .home {
+        padding: 100px 1%;
+        flex-direction: column;
+        text-align: center;
+        gap: 5rem;
+    }
+    
+    .home-image {
+        width: 75%;
+        margin-top: -3rem;
+    }
+
+    .home .text-1 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .home .text-2 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+
+    .home p{
+        font-size: 1.8rem;
+    }
+}
+
+/* Para celular */
+
+@media (max-width:428px) { /* 785 */
+    .navigation {
+        padding: 18px 20px;
+        background: var(--bc);
+    }
+
+    .menu {
+        display: block;
+    }
+
+    /* Fazer o menu hamburg virar um X, com a class .ativo do JS */
+    .menu.ativo .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu.ativo .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navigation .nav-menu{
+        gap: .3rem;
+    }
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 33%;
+        flex-direction: column;
+        /* background: var(--white); */
+        gap: -10px;
+        transition: 0.3s;
+        box-shadow: 0 0.1rem 0.5rem var(--surplus);
+        background: var(--cor);
+    }
+
+    .nav-menu.ativo {
+        right: 0;
+    }
+
+    .nav-intem {
+        margin: .5rem 0;
+    }
+
+    /* Main */
+    .home {
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        /* overflow: hidden; */
+        gap: 5rem;
+    }
+
+    .home .text-1 {
+        font-size: 1.5rem;
+    }
+
+    .home .text-2 {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+
+    .home p{
+        font-size: 15px;
+        margin-bottom: 2rem;
+    }
+
+    .home-image {
+        width: 100%;
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+    }
+}
+
